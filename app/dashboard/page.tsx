@@ -51,7 +51,8 @@ export default function DashboardPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              Bem-vindo ao seu painel financeiro pessoal. Gerencie seus cartões e despesas com facilidade.
+              Bem-vindo ao seu painel financeiro pessoal. Gerencie seus cartões
+              e despesas com facilidade.
             </motion.p>
             <CreditCardList cards={cardsMock} />
             <motion.div
@@ -60,23 +61,23 @@ export default function DashboardPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.7 }}
             >
-              <h2 className="text-3xl font-bold text-left text-purple-400">
+              <h2 className="text-2xl font-bold text-left text-purple-400">
                 Despesas Recentes
               </h2>
-              <Link
-                href="/expenses"
-                className="flex items-center p-2 hover:bg-gray-800 transition-colors duration-200"
-              >
-                <Button
-                  variant="outline"
-                  className="text-purple-400 border-purple-400 hover:bg-purple-400 hover:text-gray-900"
-                >
-                  Ver todas as despesas
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
             </motion.div>
-            <RecentExpenses expenses={expensesMock}/>
+            <RecentExpenses expenses={expensesMock} />
+            <Link
+              href="/expenses"
+              className="flex items-center justify-end mt-5 hover:bg-gray-800 transition-colors duration-200"
+            >
+              <Button
+                variant="outline"
+                className="text-purple-400 border-purple-400 hover:bg-purple-400 hover:text-gray-900"
+              >
+                Ver todas as despesas
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
           </motion.div>
         </main>
       </div>

@@ -78,31 +78,24 @@ const RecentExpenses = ({ expenses }: RecentExpensesProps) => {
                   )}
                 </div>
               </div>
-              <AnimatePresence>
-                {expandedCard === expense.expense_id && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="mt-4 pt-4 border-t border-gray-700"
-                  >
-                    <p className="text-sm text-gray-300">
-                      Data: {formatDate(expense.createdAt)}
-                    </p>
-                    <p className="text-sm text-gray-300 mt-1">
-                      Status:{" "}
-                      <span
-                        className={
-                          expense.status ? "text-green-400" : "text-red-400"
-                        }
-                      >
-                        {expense.status ? "Pago" : "Pendente"}
-                      </span>
-                    </p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+
+              {expandedCard === expense.expense_id && (
+                <div className="mt-4 pt-4 border-t border-gray-700">
+                  <p className="text-sm text-gray-300">
+                    Data: {formatDate(expense.createdAt)}
+                  </p>
+                  <p className="text-sm text-gray-300 mt-1">
+                    Status:{" "}
+                    <span
+                      className={
+                        expense.status ? "text-green-400" : "text-red-400"
+                      }
+                    >
+                      {expense.status ? "Pago" : "Pendente"}
+                    </span>
+                  </p>
+                </div>
+              )}
             </CardContent>
           </Card>
         </motion.div>
